@@ -30,6 +30,13 @@
   'includes': [
     '../../build/common.gypi',
   ],
+  'target_defaults': {
+    'target_conditions': [
+      [ 'OS=="win"', {
+        'msvs_disabled_warnings': [4267, 4312, 4706],
+	  }]
+    ],
+  },
   'targets': [
     {
       'target_name': 'libdisasm',

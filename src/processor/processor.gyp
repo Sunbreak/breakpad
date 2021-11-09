@@ -31,6 +31,13 @@
     '../build/common.gypi',
     'processor_tools.gypi',
   ],
+  'target_defaults': {
+    'target_conditions': [
+      [ 'OS=="win"', {
+        'msvs_disabled_warnings': [4146, 4244, 4267, 4457, 4541, 4554, 4706],
+	  }]
+    ],
+  },
   'targets': [
     {
       'target_name': 'processor',
